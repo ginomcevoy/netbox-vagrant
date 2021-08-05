@@ -35,9 +35,9 @@ printf "Step 7 of 19: Installing gunicorn & supervisor..."
 pip3 install gunicorn
 apt-get install supervisor -y > /dev/null
 
-printf "Step 8 of 19: Cloning NetBox repo latest stable release..."
+printf "Step 8 of 19: Cloning NetBox repo to release v2.10.4..."
 # git clone netbox master branch
-git clone -b master https://github.com/digitalocean/netbox.git /opt/netbox
+git clone -b v2.10.4 https://github.com/digitalocean/netbox.git /opt/netbox
 
 # Install NetBox requirements
 printf "Step 9 of 19: Installing NetBox requirements..."
