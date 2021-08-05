@@ -25,12 +25,10 @@ apt-get install nginx -y > /dev/null
 # Install Python 2
 printf "Step 5 of 19: Installing Python 3 dependencies..."
 apt-get install python3 python3-dev python3-pip libxml2-dev libxslt1-dev libffi-dev graphviz libpq-dev libssl-dev redis-server -y > /dev/null
-#apt-get upgrade python3 python3-dev python3-pip libxml2-dev libxslt1-dev libffi-dev graphviz libpq-dev libssl-dev redis-server -y > /dev/null
 
 # Upgrade pip
 printf "Step 6 of 19: Upgrading pip\n"
-#pip3 install --upgrade pip > /dev/null
-pip3 install --upgrade pip==9.0.3 > /dev/null
+pip3 install --upgrade pip > /dev/null
 
 # Install gunicorn & supervisor
 printf "Step 7 of 19: Installing gunicorn & supervisor..."
