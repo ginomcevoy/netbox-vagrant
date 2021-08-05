@@ -25,6 +25,7 @@ apt-get install nginx -y > /dev/null
 # Install Python 2
 printf "Step 5 of 19: Installing Python 3 dependencies..."
 apt-get install python3 python3-dev python3-pip libxml2-dev libxslt1-dev libffi-dev graphviz libpq-dev libssl-dev redis-server -y > /dev/null
+#apt-get upgrade python3 python3-dev python3-pip libxml2-dev libxslt1-dev libffi-dev graphviz libpq-dev libssl-dev redis-server -y > /dev/null
 
 # Upgrade pip
 printf "Step 6 of 19: Upgrading pip\n"
@@ -58,11 +59,11 @@ unset SECRET_KEY
 
 # Setup apache, gunicorn, & supervisord config using premade examples (need to change netbox-setup)
 printf "Step 11 of 19: Configuring nginx..."
-cp /vagrant/nginx-netbox.example /etc/nginx/sites-available/netbox
+cp /home/vagrant/config_files/nginx-netbox.example /etc/nginx/sites-available/netbox
 printf "Step 12 of 19: Configuring gunicorn..."
-cp /vagrant/gunicorn_config.example.py /opt/netbox/gunicorn_config.py
+cp /home/vagrant/config_files/gunicorn_config.example.py /opt/netbox/gunicorn_config.py
 printf "Step 13 of 19: Configuring supervisor..."
-cp /vagrant/supervisord-netbox.example.conf /etc/supervisor/conf.d/netbox.conf
+cp /home/vagrant/config_files/supervisord-netbox.example.conf /etc/supervisor/conf.d/netbox.conf
 
 # Apache Setup (enable the proxy and proxy_http modules, and reload Apache)
 printf "Step 14 of 19: Completing web service setup..."
